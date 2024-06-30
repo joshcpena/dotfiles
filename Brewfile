@@ -1,0 +1,8 @@
+tap "homebrew/bundle"
+tap "jesseduffield/lazygit"
+brew "fd"
+brew "node"
+brew "ripgrep"
+brew "rust"
+brew "stow"
+brew "jesseduffield/lazygit/lazygit"
