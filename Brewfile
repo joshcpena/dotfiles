@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "jesseduffield/lazygit"
 brew "fd"
+brew "neovim"
 brew "node"
 brew "ripgrep"
 brew "rust"
