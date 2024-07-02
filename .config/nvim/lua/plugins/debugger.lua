@@ -1,6 +1,6 @@
 return {
-  "Microsoft/vscode-cpptools",
-  config = function()
+  "mfussenegger/nvim-dap",
+  opts = function()
     local dap = require("dap")
     dap.configurations.cpp = {
       {
@@ -26,6 +26,16 @@ return {
             ignoreFailures = false,
           },
         },
+      },
+      {
+        name = "Code lldb launch",
+        type = "codelldb",
+        request = "launch",
+        program = function()
+          return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+        end,
+        cwd = "${workspaceFolder}",
+        stopOnEntry = true,
       },
     }
     dap.configurations.c = dap.configurations.cpp
