@@ -31,6 +31,6 @@ config.window_padding = {
 	top = "0px",
 	bottom = "0px",
 }
-
+config.window_decorations = "RESIZE"
 -- and finally, return the configuration to wezterm
 return config
