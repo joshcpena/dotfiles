@@ -1,6 +1,6 @@
 return {
-  "Microsoft/vscode-cpptools",
-  config = function()
+  "mfussenegger/nvim-dap",
+  opts = function()
     local dap = require("dap")
     dap.configurations.cpp = {
       {
@@ -14,8 +14,8 @@ return {
         cwd = "${workspaceFolder}",
         program = function()
           return vim.fn.input(
-            "${command:cmake.launchTargetPath}",
-            vim.fn.getcwd() .. "/build/src/applications/simple-dla-app/simple-dla-app",
+            "Select Build Exec",
+            vim.fn.getcwd() .. "/build/src/applications/tce-service/tce_service",
             "file"
           )
         end,
@@ -26,6 +26,16 @@ return {
             ignoreFailures = false,
           },
         },
+      },
+      {
+        name = "Code lldb launch",
+        type = "codelldb",
+        request = "launch",
+        program = function()
+          return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+        end,
+        cwd = "${workspaceFolder}",
+        stopOnEntry = true,
       },
     }
     dap.configurations.c = dap.configurations.cpp
