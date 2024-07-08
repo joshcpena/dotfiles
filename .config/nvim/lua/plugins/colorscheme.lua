@@ -43,7 +43,7 @@ return {
           maroon = "#ee9bb6",
           -- crust this is the dividor line between DBUI and the eidotr on the left
           mantle = "#232136", -- the sidebar bg
-          base = "#27243f", -- The editor bg
+          base = "#292640", -- The editor bg 292640
         },
       },
     },
