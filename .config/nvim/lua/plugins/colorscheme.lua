@@ -44,8 +44,17 @@ return {
           -- crust this is the dividor line between DBUI and the eidotr on the left
           mantle = "#232136", -- the sidebar bg
           base = "#292640", -- The editor bg 292640
-          crust = "#535066",
+          -- crust = "#535066",
+          crust = "#232136",
         },
+        mocha = {
+          mantle = "#191726",
+          crust = "#191726",
+          base = "#232136",
+        },
+      },
+      custom_highlights = {
+        WinSeparator = { fg = "#918da8" },
       },
     },
   },
