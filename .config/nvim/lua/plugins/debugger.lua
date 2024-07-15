@@ -10,12 +10,26 @@ return {
         MIMode = "gdb",
         miDebuggerServerAddress = "localhost:1234",
         miDebuggerPath = "/usr/bin/gdb",
-        stopAtEntry = true,
+        stopAtEntry = false,
         cwd = "${workspaceFolder}",
         program = function()
+          if vim.fn.confirm("Should I Run", "&yes\n&no", 2) == 1 then
+            local cmd = "ROSETTA_DEBUGSERVER_PORT=1234 "
+              .. vim.fn.getcwd()
+              .. "/build/Debug/src/applications/tce-service/tce_service & echo Started binary"
+            print("")
+            print("Starting " .. cmd)
+            local f = vim.fn.jobstart(cmd)
+            if f == 0 then
+              print("\nBuild: ✔️ ")
+            else
+              print("\nBuild: ❌ (code: " .. f .. ")")
+            end
+          end
+
           return vim.fn.input(
             "Select Build Exec",
-            vim.fn.getcwd() .. "/build/src/applications/tce-service/tce_service",
+            vim.fn.getcwd() .. "/build/Debug/src/applications/tce-service/tce_service",
             "file"
           )
         end,
@@ -23,6 +37,11 @@ return {
           {
             text = "-enable-pretty-printing",
             description = "enable pretty printing",
+            ignoreFailures = false,
+          },
+          {
+            text = "set architecture i386:x86-64",
+            description = "correct rosetta architecture",
             ignoreFailures = false,
           },
         },

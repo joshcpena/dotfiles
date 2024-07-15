@@ -10,6 +10,15 @@ return {
   },
   {
     "nvim-neotest/neotest",
+    keys = {
+      {
+        "<leader>tm",
+        function()
+          require("neotest").summary.run_marked()
+        end,
+        desc = "Run marked",
+      },
+    },
     config = function()
       local lib = require("neotest.lib")
       local _test_extensions = {
