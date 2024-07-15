@@ -12,7 +12,7 @@ config.colors = {
 -- Fonts:
 config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" })
 config.font_size = 12.8
-config.line_height = 1.05
+config.line_height = 1.0
 config.font_rules = {
 	{
 		intensity = "Bold",
@@ -26,12 +26,12 @@ config.font_rules = {
 config.hide_tab_bar_if_only_one_tab = true
 
 config.window_padding = {
-	left = "0px",
+	left = "0.5cell",
 	right = "0px",
 	top = "0px",
 	bottom = "0px",
 }
-config.window_decorations = "RESIZE"
+-- config.window_decorations = "RESIZE"
 
 -- and finally, return the configuration to wezterm
 return config
