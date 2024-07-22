@@ -5,10 +5,11 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- Color config:
-config.color_scheme = "Catppuccin Macchiato"
-config.colors = {
-	background = "#27243f",
-}
+-- config.color_scheme = "Catppuccin Macchiato"
+config.color_scheme = "tokyonight_moon"
+-- config.colors = {
+-- 	background = "#27243f",
+-- }
 -- Fonts:
 config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" })
 config.font_size = 12.8
@@ -31,7 +32,13 @@ config.window_padding = {
 	top = "0px",
 	bottom = "0px",
 }
--- config.window_decorations = "RESIZE"
+-- Tab bar config
+config.window_decorations = "RESIZE"
+config.use_fancy_tab_bar = false
+
+-- background transparency
+-- config.window_background_opacity = 0.99
+-- config.macos_window_background_blur = 50
 
 -- and finally, return the configuration to wezterm
 return config
