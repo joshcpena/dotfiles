@@ -59,11 +59,21 @@ return {
     },
   },
   { "talha-akram/noctis.nvim", lazy = true },
-  { "folke/tokyonight.nvim" },
+  {
+    "folke/tokyonight.nvim",
+    -- opts = {
+    --   transparent = false,
+    --   styles = {
+    --     sidebars = "transparent",
+    --     floats = "transparent",
+    --   },
+    -- },
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-macchiato",
+      --colorscheme = "catppuccin-macchiato",
+      colorscheme = "tokyonight-moon",
       -- colorscheme = "duskfox",
     },
   },
