@@ -1,0 +1,4 @@
+git:
+  # If true, periodically refresh files and submodules
+  autoRefresh: false
+  autoFetch: false
