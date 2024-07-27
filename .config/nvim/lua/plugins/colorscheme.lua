@@ -61,13 +61,13 @@ return {
   { "talha-akram/noctis.nvim", lazy = true },
   {
     "folke/tokyonight.nvim",
-    -- opts = {
-    --   transparent = false,
-    --   styles = {
-    --     sidebars = "transparent",
-    --     floats = "transparent",
-    --   },
-    -- },
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
   },
   {
     "LazyVim/LazyVim",
