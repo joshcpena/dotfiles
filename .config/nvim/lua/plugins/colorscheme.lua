@@ -43,17 +43,37 @@ return {
           maroon = "#ee9bb6",
           -- crust this is the dividor line between DBUI and the eidotr on the left
           mantle = "#232136", -- the sidebar bg
-          base = "#27243f", -- The editor bg
+          base = "#292640", -- The editor bg 292640
+          -- crust = "#535066",
+          crust = "#232136",
         },
+        mocha = {
+          mantle = "#191726",
+          crust = "#191726",
+          base = "#232136",
+        },
+      },
+      custom_highlights = {
+        WinSeparator = { fg = "#918da8" },
       },
     },
   },
   { "talha-akram/noctis.nvim", lazy = true },
-  { "folke/tokyonight.nvim" },
+  {
+    "folke/tokyonight.nvim",
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-macchiato",
+      --colorscheme = "catppuccin-macchiato",
+      colorscheme = "tokyonight-moon",
       -- colorscheme = "duskfox",
     },
   },
