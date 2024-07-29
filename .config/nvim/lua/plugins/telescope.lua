@@ -6,6 +6,10 @@ return {
         "filename_first",
         "truncate",
       },
+      layout_config = {
+        horizontal = { width = 0.95 },
+        -- other layout configuration here
+      },
     },
   },
 }

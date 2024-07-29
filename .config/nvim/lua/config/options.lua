@@ -7,4 +7,4 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.spell = true
 
-vim.opt.showmode = true
+--vim.opt.showmode = true
