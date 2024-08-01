@@ -103,8 +103,8 @@ config.background = {
 			saturation = 1.02,
 			brightness = 0.25,
 		},
-		width = "100%",
-		height = "100%",
+		-- width = "100%",
+		-- height = "100%",
 	},
 	{
 		source = {
@@ -112,7 +112,7 @@ config.background = {
 		},
 		width = "100%",
 		height = "100%",
-		opacity = 0.65,
+		opacity = 0.60,
 	},
 }
 -- and finally, return the configuration to wezterm
