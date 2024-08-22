@@ -62,6 +62,6 @@ export CPPFLAGS="-I/opt/homebrew/opt/postgresql@16/include"
 alias dev="docker exec -it cpp-dev-env-2 bash -c 'cd /root/indg && /bin/bash'"
 alias v="nvim"
 #alias ls="ls --color=auto"
-alias ls='eza'
+alias ls="eza"
 alias lg="lazygit"
 

@@ -26,7 +26,70 @@ config.font_rules = {
 		}),
 	},
 }
+-- Some helpers for  panes
+local function resize_pane(key, direction)
+	return {
+		key = key,
+		action = wezterm.action.AdjustPaneSize({ direction, 3 }),
+	}
+end
+config.key_tables = {
+	resize_panes = {
+		resize_pane("j", "Down"),
+		resize_pane("k", "Up"),
+		resize_pane("h", "Left"),
+		resize_pane("l", "Right"),
+	},
+}
+local function move_pane(key, direction)
+	return {
+		key = key,
+		mods = "LEADER",
+		action = wezterm.action.ActivatePaneDirection(direction),
+	}
+end
 
+config.leader = { key = " ", mods = "CTRL", timeout_milliseconds = 1000 }
+config.keys = {
+	{
+		-- fix leader + leader combo
+		key = " ",
+		mods = "LEADER|CTRL",
+		action = wezterm.action.SendKey({ key = " ", mods = "CTRL" }),
+	},
+	{
+		-- When we push LEADER + R...
+		key = "r",
+		mods = "LEADER",
+		-- Activate the `resize_panes` keytable
+		action = wezterm.action.ActivateKeyTable({
+			name = "resize_panes",
+			-- Ensures the keytable stays active after it handles its first keypress.
+			one_shot = false,
+			-- Deactivate the keytable after a timeout.
+			timeout_milliseconds = 1000,
+		}),
+	},
+	{
+		key = "t",
+		mods = "LEADER",
+		action = wezterm.action.TogglePaneZoomState,
+	},
+	{
+		key = "-",
+		mods = "LEADER",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "\\",
+		mods = "LEADER",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	move_pane("j", "Down"),
+	move_pane("k", "Up"),
+	move_pane("h", "Left"),
+	move_pane("l", "Right"),
+}
 -- Github monaspice config:
 -- config.font = wezterm.font({ -- Normal text
 -- 	family = "MonaspiceAr Nerd Font",
@@ -108,7 +171,7 @@ config.background = {
 	},
 	{
 		source = {
-			Color = "#222436",
+			Color = "#1e1e2e",
 		},
 		width = "100%",
 		height = "100%",
