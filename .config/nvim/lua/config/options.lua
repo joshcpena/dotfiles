@@ -5,5 +5,6 @@
 -- vim.opt.softtabstop = 4
 -- vim.opt.shiftwidth = 4
 vim.opt.spell = true
-
+vim.opt.conceallevel = 0
 --vim.opt.showmode = true
+vim.g.zenbones = { darkness = "stark" }

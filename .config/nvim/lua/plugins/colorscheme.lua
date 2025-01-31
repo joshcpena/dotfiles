@@ -16,6 +16,7 @@ return {
       })
     end,
   },
+  { "zenbones-theme/zenbones.nvim", dependencies = "rktjmp/lush.nvim", lazy = true },
   { "rebelot/kanagawa.nvim", lazy = true },
   { "neanias/everforest-nvim", lazy = true },
   { "rose-pine/neovim", name = "rose-pine", lazy = true },
@@ -67,6 +68,11 @@ return {
         sidebars = "transparent",
         floats = "transparent",
       },
+      on_highlights = function(hl, c)
+        hl.DiagnosticUnnecessary = {
+          fg = c.comments,
+        }
+      end,
     },
   },
   {
