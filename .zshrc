@@ -54,6 +54,8 @@ export PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 export PATH="$PATH:/Users/jp133020/.local/bin"
 
+export COLORTERM="truecolor" 
+
 # cpp psql flags
 export LDFLAGS="-L/opt/homebrew/opt/postgresql@16/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@16/include"
@@ -63,5 +65,5 @@ alias dev="docker exec -it cpp-dev-env-2 bash -c 'cd /root/indg && /bin/bash'"
 alias v="nvim"
 #alias ls="ls --color=auto"
 alias ls="eza"
-alias lg="lazygit"
+alias lg="TERM=screen-256color lazygit"
 
