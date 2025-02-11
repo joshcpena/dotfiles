@@ -1,0 +1,22 @@
+theme = tokyonight
+macos-titlebar-style = tabs
+
+font-family = JetBrainsMono Nerd Font
+font-style = Regular
+font-size = 13
+
+confirm-close-surface = false
+quit-after-last-window-closed = true
+clipboard-paste-protection = false
+
+window-padding-x = 0
+window-padding-y = 0
+
+
+background-opacity = 1
+
+background = 181727
+ 
+shell-integration = zsh
+clipboard-read = allow
+clipboard-write = allow

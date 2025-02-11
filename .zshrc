@@ -61,7 +61,7 @@ export LDFLAGS="-L/opt/homebrew/opt/postgresql@16/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@16/include"
 
 # Aliases 
-alias dev="docker exec -it cpp-dev-env-2 bash -c 'cd /root/indg && /bin/bash'"
+alias dev="docker exec -it dev bash -c 'cd /root/indg/btas-tax-provision-tce-node && /bin/bash'"
 alias v="nvim"
 #alias ls="ls --color=auto"
 alias ls="eza"
