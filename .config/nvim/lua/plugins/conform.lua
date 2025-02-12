@@ -5,7 +5,7 @@ return {
       timeout_ms = 1000,
       async = false, -- not recommended to change
       quiet = false, -- not recommended to change
-      lsp_format = "never", -- not recommended to change
+      lsp_format = "fallback", -- not recommended to change
       stop_after_first = true,
     },
 
