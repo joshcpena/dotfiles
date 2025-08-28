@@ -1,5 +1,6 @@
 eval "$(starship init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -54,6 +55,7 @@ export PATH="$PATH:~/.cargo/env"
 export PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 export PATH="$PATH:/Users/jp133020/.local/bin"
+export NODE_COMPILE_CACHE=~/.cache/nodejs-compile-cache
 
 export COLORTERM="truecolor" 
 
@@ -62,7 +64,7 @@ export LDFLAGS="-L/opt/homebrew/opt/postgresql@16/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@16/include"
 
 # Aliases 
-alias dev="docker exec -it dev bash -c 'cd /root/indg/btas-tax-provision-tce-node && /bin/bash'"
+alias dev="docker exec -it dev zsh -c 'cd /root/indg/btas-tax-provision-tce-node && /bin/zsh'"
 alias v="nvim"
 #alias ls="ls --color=auto"
 alias ls="eza"
@@ -89,3 +91,11 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 export PATH="$HOME/.local/bin:$PATH"
+# export PATH="/Users/Shared/ggshield-1.35.0-arm64-apple-darwin:$PATH"
+
+# fnm
+FNM_PATH="/Users/jp133020/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/jp133020/Library/Application Support/fnm:$PATH"
+  eval "`fnm env`"
+fi
