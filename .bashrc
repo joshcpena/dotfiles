@@ -6,3 +6,4 @@ alias tce='cd /root/indg/btas-tax-provision-tce/build/Debug/src/applications/tce
 eval "$(starship init bash)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 source /root/indg/btas-tax-provision-tce/build/Debug/generators/conanbuild.sh
+export NODE_COMPILE_CACHE=~/.cache/nodejs-compile-cache

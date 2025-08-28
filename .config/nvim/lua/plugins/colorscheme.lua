@@ -8,9 +8,17 @@ return {
         specs = {
           all = {
             syntax = {
-              -- operator = "orange",
-              builtin0 = "pink.base",
+              -- builtin0 = "pink.base",
             },
+          },
+        },
+        options = {
+          styles = {
+            comments = "italic", -- Value is any valid attr-list value `:help attr-list`
+            keywords = "bold",
+            -- functions = "italic,bold",
+            -- variables = "italic",
+            -- types = "italic",
           },
         },
       })

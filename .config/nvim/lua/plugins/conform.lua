@@ -1,33 +1,33 @@
 return {
   "stevearc/conform.nvim",
   opts = {
+    --log_level = vim.log.levels.DEBUG,
     default_format_opts = {
-      timeout_ms = 1000,
-      async = false, -- not recommended to change
+      timeout_ms = 3000,
+      async = true, -- not recommended to change
       quiet = false, -- not recommended to change
-      lsp_format = "never", -- not recommended to change
+      lsp_format = "fallback", -- not recommended to change
       stop_after_first = true,
     },
-
     formatters_by_ft = {
-      ["astro"] = { "prettierd" },
-      ["javascript"] = { "prettierd" },
-      ["javascriptreact"] = { "prettierd" },
-      ["typescript"] = { "prettierd" },
-      ["typescriptreact"] = { "prettierd" },
-      ["vue"] = { "prettierd" },
-      ["css"] = { "prettierd" },
-      ["scss"] = { "prettierd" },
-      ["less"] = { "prettierd" },
-      ["html"] = { "prettierd" },
-      ["json"] = { "prettierd" },
-      ["jsonc"] = { "prettierd" },
-      ["yaml"] = { "prettierd" },
-      ["markdown"] = { "prettierd" },
-      ["markdown.mdx"] = { "prettierd" },
-      ["graphql"] = { "prettierd" },
-      ["handlebars"] = { "prettierd" },
-      ["sql"] = { "sql_formatter" },
+      lua = { "stylua" },
+      fish = { "fish_indent" },
+      sh = { "shfmt" },
+      typescript = { "prettierd" },
+      javascript = { "prettierd" },
+      typescriptreact = { "prettierd" },
+      html = { "prettierd" },
+    },
+    formatters = {
+      biome = {
+        require_cwd = true,
+      },
+      prettierd = {
+        inherit = false,
+        command = "prettierd",
+        stdin = true,
+        args = { "--stdin-filepath", "$FILENAME" },
+      },
     },
   },
 }

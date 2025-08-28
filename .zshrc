@@ -1,4 +1,5 @@
 eval "$(starship init zsh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -67,3 +68,24 @@ alias v="nvim"
 alias ls="eza"
 alias lg="TERM=screen-256color lazygit"
 
+alias ls='ls --color=auto'
+
+alias ri="npm run inspect"
+alias rb="npm run build"
+export NODE_COMPILE_CACHE=~/.cache/nodejs-compile-cache
+
+# bun completions
+[ -s "/root/.bun/_bun" ] && source "/root/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# fnm
+FNM_PATH="/root/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/root/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+export PATH="$HOME/.local/bin:$PATH"
