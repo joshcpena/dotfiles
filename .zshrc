@@ -1,5 +1,5 @@
 eval "$(starship init zsh)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# container brew cmd eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Set the directory we want to store zinit and plugins
@@ -22,6 +22,16 @@ zinit light Aloxaf/fzf-tab
 
 # Load completions
 autoload -Uz compinit && compinit
+
+# Open Buffer in nvim
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
+# set default editor in nvim
+export EDITOR="nvim"
+export VISUAL="nvim"
+
 
 zinit cdreplay -q
 
@@ -56,6 +66,8 @@ export PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 export PATH="$PATH:/Users/jp133020/.local/bin"
 export NODE_COMPILE_CACHE=~/.cache/nodejs-compile-cache
+export PATH="$PATH:/Users/jp133020/.dotnet/tools"
+export PATH="$PATH:/usr/local/netcoredbg"
 
 export COLORTERM="truecolor" 
 
@@ -66,6 +78,7 @@ export CPPFLAGS="-I/opt/homebrew/opt/postgresql@16/include"
 # Aliases 
 alias dev="docker exec -it dev zsh -c 'cd /root/indg/btas-tax-provision-tce-node && /bin/zsh'"
 alias v="nvim"
+alias y="yazi"
 #alias ls="ls --color=auto"
 alias ls="eza"
 alias lg="TERM=screen-256color lazygit"
@@ -74,7 +87,6 @@ alias ls='ls --color=auto'
 
 alias ri="npm run inspect"
 alias rb="npm run build"
-export NODE_COMPILE_CACHE=~/.cache/nodejs-compile-cache
 
 # bun completions
 [ -s "/root/.bun/_bun" ] && source "/root/.bun/_bun"
@@ -99,3 +111,32 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/Users/jp133020/Library/Application Support/fnm:$PATH"
   eval "`fnm env`"
 fi
+export PATH="$HOME/.local/bin:$PATH"
+
+alias netformatcat= "sh -c 'dotnet format --include "$1"; cat "$1"' "
+
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/jp133020/.opam/opam-init/init.zsh' ]] || source '/Users/jp133020/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
+export PATH="/Users/Shared/ggshield-1.46.0-arm64-apple-darwin:$PATH"
+
+
+## Claude code stuff
+export CLAUDE_CODE_USE_BEDROCK=1 
+export AWS_REGION='us-east-1'
+export AWS_PROFILE='default'
+# export ANTHROPIC_DEFAULT_SONNET_MODEL='us.anthropic.claude-opus-4-6'
+export ANTHROPIC_DEFAULT_SONNET_MODEL='us.anthropic.claude-sonnet-4-6'
+
+alias cr="claude --resume"
+alias c="claude"
+alias cs="claude --dangerously-skip-permissions"
+
+
+source ~/.lcldevrc

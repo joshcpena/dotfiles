@@ -1,8 +1,9 @@
-return {
-  "nvim-neo-tree/neo-tree.nvim",
-  opts = {
-    window = {
-      width = 30,
-    },
-  },
-}
+return {}
+-- return {
+--   "nvim-neo-tree/neo-tree.nvim",
+--   opts = {
+--     window = {
+--       width = 30,
+--     },
+--   },
+-- }

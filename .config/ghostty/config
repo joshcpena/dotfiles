@@ -20,3 +20,11 @@ background = 181727
 shell-integration = zsh
 clipboard-read = allow
 clipboard-write = allow
+
+custom-shader = ~/.config/ghostty/shaders/cursor-smear.glsl
+#custom-shader = ~/.config/ghostty/shaders/bettercrt.glsl
+#custom-shader = ~/.config/ghostty/shaders/fire.glsl
+#custom-shader = ~/.config/ghostty/shaders/wobble.glsl
+#custom-shader = ~/.config/ghostty/shaders/matrix.glsl
+#custom-shader = ~/.config/ghostty/shaders/cursor-frozen.glsl
+#custom-shader = ~/.config/ghostty/shaders/cursor-smear-fade.glsl
